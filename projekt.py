@@ -15,7 +15,7 @@ def ask_math_question(tabel, used_factors):
     while True:
         factor = random.randint(2, 12)
         if factor not in used_factors:
-            used_factors.add(factor)
+            used_factors.append(factor)
             correct_answer = tabel * factor
             try:
                 answer = int(input(f"{tabel} * {factor} = "))
@@ -51,7 +51,7 @@ def choose_zombie_door(doors_left):
 def start_game():
     print("Välkommen till Zombiemattespelet!")
     tabel = choose_tabel()
-    used_factors = set()
+    used_factors = []  # lista istället för set
     total_questions = 11
     doors_left = 12
 
